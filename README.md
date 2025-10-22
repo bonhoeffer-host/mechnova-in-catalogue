@@ -1,7 +1,7 @@
 # 📚 Stevron Tools Catalog
 
 <div align="center">
-  <img src="public/logo.png" alt="Stevron Tools" width="200" height="60">
+  <img src="public/logo.png" alt="Stevron Tools" width="200" height="100">
   
   **Interactive Digital Catalog Platform for Industrial Equipment**
   

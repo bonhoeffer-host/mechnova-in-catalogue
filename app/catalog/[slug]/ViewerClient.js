@@ -300,7 +300,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                         src={`/pages/${catalog.slug}/${img}`}
                         alt={`Page ${i + 1}`}
                         style={{ transform: `scale(${zoom})` }}
-                        className="w-full h-full object-contain"
+                        className="w-[96%] h-full object-contain"
                         draggable={false}
                       />
                     </div>
