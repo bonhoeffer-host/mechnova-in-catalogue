@@ -9,23 +9,23 @@ const montserrat = Montserrat({
 
 export const metadata = {
   title: {
-    default: "Stevron Tools | Industrial Equipment Catalogs",
-    template: "%s | Stevron Tools"
+    default: "Mechnova Machines | Industrial Equipment Catalogs",
+    template: "%s | Mechnova Machines"
   },
-  description: "Browse comprehensive digital catalogs of industrial machinery and equipment from Stevron Tools. View detailed specifications, technical drawings, and product information in our interactive catalog viewer.",
+  description: "Browse comprehensive digital catalogs of industrial machinery and equipment from Mechnova Machines. View detailed specifications, technical drawings, and product information in our interactive catalog viewer.",
   keywords: [
     "industrial machinery",
     "equipment catalogs",
     "manufacturing equipment",
-    "Stevron Tools",
+    "Mechnova Machines",
     "technical specifications",
     "industrial products",
     "machinery catalog",
     "equipment documentation"
   ],
-  authors: [{ name: "Stevron Tools" }],
-  creator: "Stevron Tools",
-  publisher: "Stevron Tools",
+  authors: [{ name: "Mechnova Machines" }],
+  creator: "Mechnova Machines",
+  publisher: "Mechnova Machines",
   robots: {
     index: true,
     follow: true,
@@ -55,23 +55,23 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://catalog.stevrontools.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://catalog.mechnovamachines.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Stevron Tools Catalog",
-    title: "Stevron Tools | Industrial Equipment Catalogs",
+    siteName: "Mechnova Machines Catalog",
+    title: "Mechnova Machines | Industrial Equipment Catalogs",
     description: "Browse comprehensive digital catalogs of industrial machinery and equipment. View detailed specifications and technical information in our interactive catalog viewer.",
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Stevron Tools Catalog",
+    title: "Mechnova Machines Catalog",
   },
-  applicationName: "Stevron Tools Catalog",
+  applicationName: "Mechnova Machines Catalog",
   generator: "Next.js",
   manifest: "/manifest.json",
 };

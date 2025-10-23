@@ -1,7 +1,7 @@
 {
-  "name": "Bonhoeffer Machines Catalog",
-  "short_name": "BM Catalog",
-  "description": "Browse comprehensive digital catalogs of industrial machinery and equipment from Bonhoeffer Machines",
+  "name": "Mechnova Machines Catalog",
+  "short_name": "MM Catalog",
+  "description": "Browse comprehensive digital catalogs of industrial machinery and equipment from Mechnova Machines",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1f2937",

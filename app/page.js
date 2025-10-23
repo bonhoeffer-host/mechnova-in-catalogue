@@ -28,7 +28,7 @@ export default function Home() {
   }, [search, catalogs]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen bg-[#E6F2FB]">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <motion.div
@@ -37,10 +37,10 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Stevron <span className="text-[#989b2e]">Catalogs</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Mechnova Machines <span className="text-[#0072ce]">Catalogs</span>
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Browse and explore our comprehensive collection of catalogs.
             <br/>
             Find detailed information about our products and services.
@@ -63,7 +63,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-6"
         >
-          <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+          <p className="text-sm text-gray-600 text-center">
             {search.length === 0 ? '' : 
              filtered.length === 1 ? `1 catalog found for "${search}"` : `${filtered.length} catalogs found for "${search}"`}
           </p>
@@ -80,10 +80,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-white dark:bg-gray-800 flex flex-col justify-between rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden border border-gray-200 dark:border-gray-700"
+            className="bg-white flex flex-col justify-between rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden border border-blue-100"
           >
             {/* Thumbnail Section */}
-            <div className="bg-gray-700 overflow-hidden">
+            <div className="bg-white overflow-hidden">
               <img
                 src={`/pages/${cat.slug}/${cat.slug}_1.webp`}
                 alt={cat.title}
@@ -93,10 +93,10 @@ export default function Home() {
 
             {/* Content Section */}
             <div className="px-3 py-3">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#989b2e] transition-colors duration-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0072ce] transition-colors duration-200">
                 {cat.title}
               </h3>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+              <div className="flex items-center text-sm text-gray-600 mb-4">
                 <FiCalendar className="h-4 w-4 mr-2" />
                 <span><strong>Published: </strong>{cat.date}</span>
               </div>
@@ -105,9 +105,9 @@ export default function Home() {
             <div className="px-4 pb-4">
               <a href={`/catalog/${cat.slug}`}>
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-[#989b2e] text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 text-lg cursor-pointer"
+                  className="w-full bg-[#0072ce] text-white font-semibold py-3 px-4 rounded-full hover:bg-[#005ba3] transition-all duration-200 flex items-center justify-center space-x-2 text-lg shadow cursor-pointer"
                 >
                   <span>View Catalog</span>
                   <FiExternalLink className="h-4 w-4" />

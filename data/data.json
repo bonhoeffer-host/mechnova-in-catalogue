@@ -2,11 +2,11 @@
   "catalog": [
     {
       "id": "1",
-      "title": "Stevron Tools",
-      "link": "/pages/stevron-tools",
-      "pdf": "/pdf/stevron-tools.pdf",
-      "slug": "stevron-tools",
-      "date": "October 22, 2025"
+      "title": "Mechnova Machines",
+      "link": "/pages/mechnova-machines",
+      "pdf": "/pdf/mechnova-machines.pdf",
+      "slug": "mechnova-machines",
+      "date": "October 23, 2025"
     }
   ]
 }

@@ -6,9 +6,22 @@ const config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'mechnova-blue': {
+          DEFAULT: '#0072ce',
+          dark: '#005ba3',
+          light: '#0090ff',
+        },
+        'mechnova-light': {
+          DEFAULT: '#cbe7ff',
+          light: '#E6F2FB',
+        }
+      },
+    },
   },
   plugins: [],
 };
 
 export default config; 
+ 

@@ -197,19 +197,19 @@ export default function ViewerClient({ catalog, images, searchParams }) {
   }, [catalog.slug, catalog.title]);
 
   return (
-    <div ref={containerRef} className="h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 flex flex-col relative overflow-hidden">
+    <div ref={containerRef} className="h-screen bg-white flex flex-col relative overflow-hidden">
       {/* Breadcrumb */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-2">
+      <div className="bg-white border-b-2 border-gray-200 px-4 py-3">
         <div className="flex items-center space-x-2 text-sm">
           <Link
             href="/"
-            className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 flex items-center"
+            className="text-[#0072ce] hover:text-[#005ba3] flex items-center font-medium transition-colors duration-200"
           >
             <FaHouse className="h-4 w-4 mr-1" />
             Home
           </Link>
-          <span className="text-gray-500 dark:text-gray-400">/</span>
-          <span className="text-gray-900 dark:text-white font-medium truncate">
+          <span className="text-gray-400">/</span>
+          <span className="text-gray-900 font-semibold truncate">
             {catalog.title.toUpperCase()}
           </span>
         </div>
@@ -227,7 +227,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
       </div> */}
 
       {/* Main Viewer Area */}
-      <div className="flex-1 flex items-center justify-center px-4">
+      <div className="flex-1 flex items-center justify-center px-4 bg-[#cbe7ff]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -240,7 +240,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
             whileTap={{ scale: 0.9 }}
             onClick={prevPage} 
             disabled={currentPage === 1} 
-            className="hidden sm:flex bg-gray-700 hover:bg-gray-600 disabled:bg-gray-800 disabled:opacity-30 text-white p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer"
+            className="hidden sm:flex bg-white hover:bg-[#E6F2FB] disabled:bg-gray-200 disabled:opacity-50 text-[#0072ce] p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer border-2 border-[#0072ce]"
           >
             <MdChevronLeft size={32} />
           </motion.button>
@@ -316,7 +316,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                 whileTap={{ scale: 0.9 }}
                 onClick={prevPage} 
                 disabled={currentPage === 1} 
-                className="bg-gray-700 hover:bg-gray-600 disabled:bg-gray-800 disabled:opacity-30 text-white p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer"
+                className="bg-white hover:bg-[#E6F2FB] disabled:bg-gray-200 disabled:opacity-50 text-[#0072ce] p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer border-2 border-[#0072ce]"
               >
                 <MdChevronLeft size={32} />
               </motion.button>
@@ -326,7 +326,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                 whileTap={{ scale: 0.9 }}
                 onClick={nextPage} 
                 disabled={currentPage >= totalPages} 
-                className="bg-gray-700 hover:bg-gray-600 disabled:bg-gray-800 disabled:opacity-30 text-white p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer"
+                className="bg-white hover:bg-[#E6F2FB] disabled:bg-gray-200 disabled:opacity-50 text-[#0072ce] p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer border-2 border-[#0072ce]"
               >
                 <MdChevronRight size={32} />
               </motion.button>
@@ -339,7 +339,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
             whileTap={{ scale: 0.9 }}
             onClick={nextPage} 
             disabled={currentPage >= totalPages} 
-            className="hidden sm:flex bg-gray-700 hover:bg-gray-600 disabled:bg-gray-800 disabled:opacity-30 text-white p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer"
+            className="hidden sm:flex bg-white hover:bg-[#E6F2FB] disabled:bg-gray-200 disabled:opacity-50 text-[#0072ce] p-4 rounded-full transition-all duration-200 shadow-lg flex-shrink-0 cursor-pointer border-2 border-[#0072ce]"
           >
             <MdChevronRight size={32} />
           </motion.button>
@@ -351,27 +351,27 @@ export default function ViewerClient({ catalog, images, searchParams }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="bg-gray-800/90 backdrop-blur-sm border-t border-gray-700"
+        className="bg-white border-t-2 border-gray-200 shadow-lg"
       >
         {/* Progress Bar for small screens - at top */}
-        <div className="sm:hidden px-4 py-2 border-b border-gray-700">
+        <div className="sm:hidden px-4 py-2 border-b border-gray-200">
           <div className="flex flex-col items-center gap-2">
-            <div className="text-gray-300 text-sm font-medium">
+            <div className="text-gray-700 text-sm font-semibold">
               {getPages().length === 2
                 ? `Pages ${getPages()[0]}-${getPages()[1]} of ${totalPages}`
                 : `Page ${getPages()[0]} of ${totalPages}`}
             </div>
             
-            <div className="w-full bg-gray-700 rounded-full h-3 cursor-pointer shadow-inner relative" onClick={handleProgressClick} title="Jump to page">
+            <div className="w-full bg-gray-200 rounded-full h-3 cursor-pointer shadow-inner relative" onClick={handleProgressClick} title="Jump to page">
               <motion.div 
-                className="h-3 bg-gradient-to-r from-[#989b2e] to-[#b8bb35] rounded-full shadow-sm relative pointer-events-none"
+                className="h-3 bg-gradient-to-r from-[#0072ce] to-[#0090ff] rounded-full shadow-sm relative pointer-events-none"
                 style={{ width: `${progress}%` }}
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.5 }}
               >
                 {/* Circle indicator at the tip */}
-                <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-md  pointer-events-none"></div>
+                <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-[#0072ce] rounded-full shadow-md pointer-events-none"></div>
               </motion.div>
             </div>
           </div>
@@ -385,43 +385,43 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={zoomOut} 
-                className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer" 
+                className="bg-[#E6F2FB] hover:bg-[#cbe7ff] text-[#0072ce] p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer border border-blue-200" 
                 title="Zoom out"
               >
                 <MdZoomOut size={18} />
-                <span className="hidden lg:inline text-sm">Zoom Out</span>
+                <span className="hidden lg:inline text-sm font-medium">Zoom Out</span>
               </motion.button>
               
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={zoomIn} 
-                className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer" 
+                className="bg-[#E6F2FB] hover:bg-[#cbe7ff] text-[#0072ce] p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer border border-blue-200" 
                 title="Zoom in"
               >
                 <MdZoomIn size={18} />
-                <span className="hidden lg:inline text-sm">Zoom In</span>
+                <span className="hidden lg:inline text-sm font-medium">Zoom In</span>
               </motion.button>
             </div>
 
             {/* Center - Page Info and Progress (hidden on small screens) */}
             <div className="hidden sm:flex flex-1 flex-col items-center gap-2 max-w-md">
-              <div className="text-gray-300 text-sm font-medium">
+              <div className="text-gray-700 text-sm font-semibold">
                 {getPages().length === 2
                   ? `Pages ${getPages()[0]}-${getPages()[1]} of ${totalPages}`
                   : `Page ${getPages()[0]} of ${totalPages}`}
               </div>
               
-              <div className="w-full bg-gray-700 rounded-full h-3 cursor-pointer shadow-inner relative" onClick={handleProgressClick} title="Jump to page">
+              <div className="w-full bg-gray-200 rounded-full h-3 cursor-pointer shadow-inner relative" onClick={handleProgressClick} title="Jump to page">
                 <motion.div 
-                  className="h-3 bg-gradient-to-r from-[#989b2e] to-[#b8bb35] rounded-full shadow-sm relative pointer-events-none"
+                  className="h-3 bg-gradient-to-r from-[#0072ce] to-[#0090ff] rounded-full shadow-sm relative pointer-events-none"
                   style={{ width: `${progress}%` }}
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.5 }}
                 >
                   {/* Circle indicator at the tip */}
-                  <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-md  pointer-events-none"></div>
+                  <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-[#0072ce] rounded-full shadow-md pointer-events-none"></div>
                 </motion.div>
               </div>
             </div>
@@ -432,50 +432,50 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setFullscreen((f) => !f)} 
-                className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer" 
+                className="bg-[#E6F2FB] hover:bg-[#cbe7ff] text-[#0072ce] p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer border border-blue-200" 
                 title="Fullscreen"
               >
-                {fullscreen ? <MdFullscreenExit size={18} /> : <MdFullscreen size={18} />} <span className="hidden lg:inline text-sm">{fullscreen ? 'Exit' : 'Enter'} Full Screen</span>
+                {fullscreen ? <MdFullscreenExit size={18} /> : <MdFullscreen size={18} />} <span className="hidden lg:inline text-sm font-medium">{fullscreen ? 'Exit' : 'Enter'} Full Screen</span>
               </motion.button>
               
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={printPDF} 
-                className="bg-[#989b2e] hover:bg-[#7a7c25] text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer" 
+                className="bg-[#0072ce] hover:bg-[#005ba3] text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer shadow" 
                 title="Print"
               >
-                <MdPrint size={18} /><span className="hidden lg:inline text-sm"> Print</span>
+                <MdPrint size={18} /><span className="hidden lg:inline text-sm font-medium"> Print</span>
               </motion.button>
               
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={downloadPDF} 
-                className="bg-[#989b2e] hover:bg-[#7a7c25] text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer" 
+                className="bg-[#0072ce] hover:bg-[#005ba3] text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer shadow" 
                 title="Download"
               >
-                <MdDownload size={18} /><span className="hidden lg:inline text-sm"> Download</span>
+                <MdDownload size={18} /><span className="hidden lg:inline text-sm font-medium"> Download</span>
               </motion.button>
               
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setShareOpen(true)} 
-                className="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer" 
+                className="bg-[#0072ce] hover:bg-[#005ba3] text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer shadow" 
                 title="Share"
               >
-                <MdShare size={18} /><span className="hidden lg:inline text-sm"> Share</span>
+                <MdShare size={18} /><span className="hidden lg:inline text-sm font-medium"> Share</span>
               </motion.button>
               
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={openThumbs} 
-                className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer" 
+                className="bg-[#E6F2FB] hover:bg-[#cbe7ff] text-[#0072ce] p-2 rounded-lg transition-all duration-200 flex items-center gap-2 cursor-pointer border border-blue-200" 
                 title="Thumbnails"
               >
-                <MdGridView size={18} /><span className="hidden lg:inline text-sm"> Pages</span>
+                <MdGridView size={18} /><span className="hidden lg:inline text-sm font-medium"> Pages</span>
               </motion.button>
             </div>
           </div>
@@ -495,15 +495,15 @@ export default function ViewerClient({ catalog, images, searchParams }) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="bg-gray-800 rounded-2xl p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative border border-gray-700 shadow-2xl"
+              className="bg-white rounded-2xl p-6 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative border-2 border-blue-200 shadow-2xl"
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-bold text-white">All Pages</h3>
+                <h3 className="text-xl font-bold text-gray-900">All Pages</h3>
                 <motion.button 
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={closeThumbs} 
-                  className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition-all duration-200"
+                  className="bg-[#E6F2FB] hover:bg-[#cbe7ff] text-[#0072ce] p-2 rounded-lg transition-all duration-200 border border-blue-200"
                 >
                   <MdClose size={24} />
                 </motion.button>
@@ -514,7 +514,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                     key={img} 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="cursor-pointer bg-gray-700 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 group" 
+                    className="cursor-pointer bg-[#E6F2FB] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 group border border-blue-200" 
                     onClick={() => { goToPage(i + 1); closeThumbs(); }}
                   >
                     <div className="aspect-[3/4] overflow-hidden">
@@ -524,7 +524,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
                       />
                     </div>
-                    <div className="text-center py-2 bg-gray-700 text-white text-sm font-medium">
+                    <div className="text-center py-2 bg-white text-[#0072ce] text-sm font-semibold border-t border-blue-200">
                       Page {i + 1}
                     </div>
                   </motion.div>
@@ -548,22 +548,22 @@ export default function ViewerClient({ catalog, images, searchParams }) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="bg-gray-800 rounded-2xl p-6 max-w-md w-full relative border border-gray-700 shadow-2xl"
+              className="bg-white rounded-2xl p-6 max-w-md w-full relative border-2 border-blue-200 shadow-2xl"
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-bold text-white">Share Catalog</h3>
+                <h3 className="text-xl font-bold text-gray-900">Share Catalog</h3>
                 <motion.button 
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setShareOpen(false)} 
-                  className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-lg transition-all duration-200"
+                  className="bg-[#E6F2FB] hover:bg-[#cbe7ff] text-[#0072ce] p-2 rounded-lg transition-all duration-200 border border-blue-200"
                 >
                   <MdClose size={24} />
                 </motion.button>
               </div>
               
               <div className="mb-6">
-                <p className="text-gray-300 text-sm mb-4">Share this catalog on social media or copy the link</p>
+                <p className="text-gray-700 text-sm mb-4">Share this catalog on social media or copy the link</p>
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   {socialLinks.map((s) => (
                     <motion.a 
@@ -573,10 +573,10 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                       rel="noopener noreferrer" 
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-gray-700 hover:bg-gray-600 text-white p-3 rounded-lg transition-all duration-200 flex items-center gap-2 justify-center"
+                      className="bg-[#E6F2FB] hover:bg-[#cbe7ff] text-[#0072ce] p-3 rounded-lg transition-all duration-200 flex items-center gap-2 justify-center border border-blue-200"
                     >
                       {s.icon} 
-                      <span className="text-sm font-medium">{s.label}</span>
+                      <span className="text-sm font-semibold">{s.label}</span>
                     </motion.a>
                   ))}
                 </div>
@@ -587,13 +587,13 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                   type="text" 
                   value={shareUrl()} 
                   readOnly 
-                  className="flex-1 bg-gray-700 border border-gray-600 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#989b2e]" 
+                  className="flex-1 bg-gray-50 border-2 border-gray-300 text-gray-900 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#0072ce] focus:border-[#0072ce]" 
                 />
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={copyLink} 
-                  className="bg-[#989b2e] hover:bg-[#7a7c25] text-white p-2 rounded-lg transition-all duration-200" 
+                  className="bg-[#0072ce] hover:bg-[#005ba3] text-white p-2 rounded-lg transition-all duration-200 shadow" 
                   title="Copy link"
                 >
                   <MdContentCopy size={20} />
@@ -607,7 +607,7 @@ export default function ViewerClient({ catalog, images, searchParams }) {
                   exit={{ opacity: 0, y: -10 }}
                   className="mt-3 text-center"
                 >
-                  <span className="text-green-400 text-sm font-medium">✓ Link copied to clipboard!</span>
+                  <span className="text-green-600 text-sm font-semibold">✓ Link copied to clipboard!</span>
                 </motion.div>
               )}
             </motion.div>
